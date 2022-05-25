@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS systemUser;
+DROP TABLE IF EXISTS goods;
+DROP TABLE IF EXISTS uploadFile;
+
+CREATE TABLE systemUser (
+	_id uuid not null,
+	account varchar(128) UNIQUE,
+	password varchar(128),
+	PRIMARY KEY (_id)
+);
+CREATE TABLE uploadFile (
+	_id uuid NOT NULL,
+	name varchar(128) NOT NULL,
+	PRIMARY KEY (_id)
+);
+CREATE TABLE goods (
+	_id uuid NOT NULL,
+	name varchar(128) NOT NULL,
+	"desc" varchar(512) NOT NULL,
+	upload_id uuid NOT NULL,
+	PRIMARY KEY (_id),
+	CONSTRAINT fk_uploadFile
+      FOREIGN KEY(upload_id) 
+	  REFERENCES uploadFile(_id)
+);
+COMMIT;
