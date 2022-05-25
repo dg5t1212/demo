@@ -1,0 +1,507 @@
+*, :after, :before {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+button, input, select, textarea {
+    background-color: transparent;
+    border-style: none;
+}
+
+:after, :before {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    margin: -12px;
+}
+
+.noBorder {
+    border: 0px;
+}
+
+.v-avatar .v-icon, .v-avatar .v-image, .v-avatar .v-responsive__content, .v-avatar img, .v-avatar svg {
+    border-radius: inherit;
+    display: inline-flex;
+    height: inherit;
+    width: inherit;
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    width: 100%;
+    padding: 12px;
+}
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+.col-md-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+}
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 600px) {
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .v-application--is-ltr .me-sm-3 {
+        margin-right: 12px!important;
+    }
+}
+
+@media (min-width: 960px){
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-md-4 {
+        flex: 0 0 33.3333333333%;
+        max-width: 33.3333333333%;
+    }
+   
+    .v-application .d-sm-block {
+        display: block!important;
+    }
+
+    .container {
+        max-width: 900px;
+    }
+    .v-application .px-md-10 {
+        padding-right: 40px!important;
+        padding-left: 40px!important;
+    }
+}
+
+
+.container {
+    width: 100%;
+    padding: 12px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.hero-section {
+    background-image: url(https://foodhub-nuxt.vercel.app/_nuxt/img/header-bg.d39c465.png);
+    background-size: cover;
+}
+
+.v-application .mt-6 {
+    margin-top: 24px!important;
+}
+
+.v-application .mb-10 {
+    margin-bottom: 40px!important;
+}
+
+.py-15 {
+    padding-top: 60px!important;
+    padding-bottom: 60px!important;
+}
+
+.v-sheet {
+    border-radius: 0;
+}
+.v-dialog>* {
+    width: 100%;
+}
+.v-sheet:not(.v-sheet--outlined) {
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 20%), 0 0 0 0 rgb(0 0 0 / 14%), 0 0 0 0 rgb(0 0 0 / 12%);
+}
+.v-card {
+    border-width: thin;
+    display: block;
+    max-width: 100%;
+    outline: 0;
+    text-decoration: none;
+    transition-property: box-shadow,opacity;
+    word-wrap: break-word;
+    position: relative;
+    white-space: normal;
+}
+.theme--light.v-card {
+    /* background-color: #fff; */
+    color: rgba(0,0,0,.87);
+}
+.v-sheet.v-card:not(.v-sheet--outlined) {
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+.v-sheet.v-card {
+    border-radius: 4px;
+}
+.v-image__image, .v-image__placeholder {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.v-image__image {
+    background-repeat: no-repeat;
+}
+.v-image__image--contain {
+    background-size: contain;
+}
+
+.v-responsive {
+    position: relative;
+    overflow: hidden;
+    flex: 1 0 auto;
+    max-width: 100%;
+    display: flex;
+}
+
+
+.v-application .pa-4 {
+    padding: 16px!important;
+}
+.v-application .text-center {
+    text-align: center!important;
+}
+.v-application--is-ltr .me-3 {
+    margin-right: 12px!important;
+}
+
+
+.br-10 {
+    border-radius: 10px!important;
+}
+
+.v-responsive__sizer {
+    transition: padding-bottom .2s cubic-bezier(.25,.8,.5,1);
+    flex: 1 0 0px;
+}
+
+.o-hidden {
+    overflow: hidden!important;
+}
+
+
+
+.theme--light.v-sheet--outlined {
+    border: thin solid rgba(0,0,0,.12);
+}
+
+.v-application .pa-4 {
+    padding: 16px!important;
+}
+
+
+.v-application .align-end {
+    align-items: flex-end!important;
+}
+
+.v-application .justify-space-between {
+    justify-content: space-between!important;
+}
+.v-application .flex-wrap {
+    flex-wrap: wrap!important;
+}
+.v-application .flex-column {
+    flex-direction: column!important;
+}
+.v-application .d-flex {
+    display: flex!important;
+}
+
+.v-application .text-decoration-none {
+    text-decoration: none!important;
+}
+
+
+
+
+.v-application .align-center {
+    align-items: center!important;
+}
+
+.grow, .spacer {
+    flex-grow: 1!important;
+}
+
+.v-application .rounded-0 {
+    border-radius: 0!important;
+}
+.v-avatar {
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+/* display */
+.v-application .d-none {
+    display: none!important;
+}
+.v-application .d-block {
+    display: block!important;
+}
+
+/* btn */
+.v-btn:not(.v-btn--round).v-size--default {
+    height: 36px;
+    min-width: 64px;
+    padding: 0 16px;
+}
+
+.v-btn.v-size--default, .v-btn.v-size--large {
+    font-size: .875rem;
+}
+.theme--dark.v-btn {
+    color: #fff;
+}
+.v-btn {
+    align-items: center;
+    border-radius: 4px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-weight: 500;
+    letter-spacing: .0892857143em;
+    justify-content: center;
+    outline: 0;
+    position: relative;
+    text-decoration: none;
+    text-indent: 0.0892857143em;
+    text-transform: uppercase;
+    transition-duration: .28s;
+    transition-property: box-shadow,transform,opacity;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.v-btn:before {
+    background-color: currentColor;
+    border-radius: inherit;
+    bottom: 0;
+    color: inherit;
+    content: "";
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity .2s cubic-bezier(.4,0,.6,1);
+}
+
+
+.v-btn>.v-btn__content .v-icon {
+    color: inherit;
+}
+.v-icon.v-icon {
+    align-items: center;
+    display: inline-flex;
+    font-feature-settings: "liga";
+    font-size: 24px;
+    justify-content: center;
+    letter-spacing: normal;
+    line-height: 1;
+    position: relative;
+    text-indent: 0;
+    transition: .3s cubic-bezier(.25,.8,.5,1),visibility 0s;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.theme--dark.v-icon {
+    color: #fff;
+}
+.v-application--is-ltr .me-0 {
+    margin-right: 0!important;
+}
+
+
+[role=button], [type=button], [type=reset], [type=submit], button {
+    cursor: pointer;
+    color: inherit;
+}
+
+
+.v-icon.v-icon:after {
+    background-color: currentColor;
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: scale(1.3);
+    width: 100%;
+    transition: opacity .2s cubic-bezier(.4,0,.6,1);
+}
+
+.v-btn__content {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: inherit;
+    line-height: normal;
+    position: relative;
+    transition: inherit;
+    transition-property: opacity;
+}
+.v-application .py-16 {
+    padding-top: 64px!important;
+    padding-bottom: 64px!important;
+}
+.v-application .py-8 {
+    padding-top: 32px!important;
+    padding-bottom: 32px!important;
+}
+.v-application .px-3 {
+    padding-right: 12px!important;
+    padding-left: 12px!important;
+}
+
+.v-application .text-center {
+    text-align: center!important;
+}
+
+.v-application .mb-1 {
+    margin-bottom: 4px!important;
+}
+.v-application .mb-2 {
+    margin-bottom: 8px!important;
+}
+.v-application .mb-8 {
+    margin-bottom: 32px!important;
+}
+.v-application .mb-9 {
+    margin-bottom: 36px!important;
+}
+
+.text-16 {
+    font-size: 16px;
+}
+.text-14, h6 {
+    font-size: 14px;
+}
+
+/* .v-input {
+    align-items: flex-start;
+    display: flex;
+    flex: 1 1 auto;
+    font-size: 16px;
+    letter-spacing: normal;
+    max-width: 100%;
+    text-align: left;
+} */
+
+
+
+
+.v-application {
+    font-family: "Open Sans";
+    line-height: 1.5;
+}
+
+.theme--light .v-application {
+    background: #fff;
+    color: rgba(0,0,0,.87);
+}
+
+.theme--light.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state)>.v-input__control>.v-input__slot fieldset {
+    color: rgba(0,0,0,.38);
+}
+
+.theme--light.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state)>.v-input__control>.v-input__slot fieldset {
+    color: rgb(109 15 15 / 38%);
+}
+
+.theme--light.v-sheet {
+    background-color: #fff;
+    border-color: #fff;
+    color: rgba(0,0,0,.87);
+}
+
+.theme--light.v-application {
+    background: #fff;
+    color: rgba(0,0,0,.87);
+}
+
+.v-application .mb-4 {
+    margin-bottom: 16px!important;
+}
+
+.v-application--wrap {
+    flex: 1 1 auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+    position: relative;
+}
+.v-overlay {
+    align-items: center;
+    border-radius: inherit;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    transition: .3s cubic-bezier(.25,.8,.5,1),z-index 1ms;
+}
+.v-overlay--active {
+    pointer-events: auto;
+}
+.v-overlay__scrim {
+    border-radius: inherit;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: inherit;
+    width: 100%;
+    will-change: opacity;
+}
+theme--dark.v-overlay {
+    color: #fff;
+}
+.overflow-y-hidden {
+    overflow-y: hidden!important;
+}
+
+.bg-grey-light {
+    background-color: #f6f9fc;
+}
