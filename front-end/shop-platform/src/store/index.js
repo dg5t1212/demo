@@ -3,7 +3,9 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     goods:[],
-    token: '',
+    token: localStorage.getItem("token"),
+    cartJsonStr: localStorage.getItem("cart"),
+    cart: [],
     resturants:[
       { isOff: true, chip_content: 30, imgUrl: '', name: 'Starbucks', star: 4.5, price: 20, remark: 'Cofee, set menu • 15 - 20 min' },
       { isOff: true, chip_content: 30, imgUrl: '', name: 'Mughal Masala Masala Masala Masala', star: 4.5, price: 20, remark: 'Cofee, set menu • 15 - 20 min' },
@@ -21,6 +23,9 @@ export default createStore({
     resturantList(state){
       return state.resturants;
     },
+    cartList(state){
+      return JSON.parse(state.cartJsonStr)
+    }
   },
   mutations: {
     setGoods(state, payload){
