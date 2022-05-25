@@ -1,10 +1,10 @@
 <template>
-  <div class="v-tabs mb-8 theme--light">
+  <div class="v-tabs mb-3 theme--light">
     <div class="v-item-group theme--light v-slide-group v-tabs-bar v-tabs-bar--is-mobile primary--text">
       <div class="v-slide-group__prev v-slide-group__prev--disabled"></div>
       <div class="v-slide-group__wrapper">
         <div class="v-slide-group__content v-tabs-bar__content" v-on:click="switchTabToClick">
-          <a v-for="(tab, index) in tabss" :key='index' v-bind:class="initTabBar(index)">{{ tab.name }}</a>
+          <a v-for="(tab, index) in vTabs" :key='index' v-bind:class="initTabBar(index)">{{ tab.name }}</a>
         </div>
       </div>
       <div class="v-slide-group__next v-slide-group__next--disabled"></div>
@@ -18,16 +18,16 @@ export default {
   props: ['tabs'],
   data (){
       return {
-          tabss : [
-              {name: ' Order Online '},
-              {name: ' Book A Table '},
-              {name: ' Reviews '},
-          ]
+          // tabss : [
+          //     {name: ' Order Online '},
+          //     {name: ' Book A Table '},
+          //     {name: ' Reviews '},
+          // ]
+          vTabs : this.tabs,
       }
   },
   methods:{
       initTabBar(index) {
-          console.log('index:',index)
           let tabClass = "text-capitalize v-tab";
           if(index === 0){
               tabClass += " v-tab--active";

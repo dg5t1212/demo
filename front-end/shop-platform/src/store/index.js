@@ -4,6 +4,12 @@ export default createStore({
   state: {
     goods:[],
     token: '',
+    resturants:[
+      { isOff: true, chip_content: 30, imgUrl: '', name: 'Starbucks', star: 4.5, price: 20, remark: 'Cofee, set menu • 15 - 20 min' },
+      { isOff: true, chip_content: 30, imgUrl: '', name: 'Mughal Masala Masala Masala Masala', star: 4.5, price: 20, remark: 'Cofee, set menu • 15 - 20 min' },
+      { isOff: false, chip_content: 0, imgUrl: '', name: 'Woondal', star: 4.5, price: 20, remark: 'Cofee, set menu • 15 - 20 min' },
+      { isOff: true, chip_content: 30, imgUrl: '', name: 'Red Chillies', star: 4.5, price: 20, remark: 'Cofee, set menu • 15 - 20 min' },
+    ],
   },
   getters: {
     goodsList(state){
@@ -11,7 +17,10 @@ export default createStore({
     },
     getToken(state){
       return state.token;
-    }
+    },
+    resturantList(state){
+      return state.resturants;
+    },
   },
   mutations: {
     setGoods(state, payload){

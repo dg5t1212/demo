@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div>
-            <TabBar />
+            <TabBar v-bind:tabs="tabs"/>
             <div class="v-window v-item-group theme--light v-tabs-items">
                 <div class="v-window__container">
                     <TabOrderOnline />
@@ -25,7 +25,7 @@ export default {
     name : "FoodsMenuView",
     data() {
         return{
-            tags: [
+            tabs: [
                 {name: 'Order Online'},
                 {name: 'Book A Table'},
                 {name: 'Reviews'},
