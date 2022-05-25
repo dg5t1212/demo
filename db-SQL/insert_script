@@ -1,0 +1,17 @@
+INSERT INTO systemuser (account, password) VALUES ('user', 'password');
+
+INSERT INTO uploadfile (name) VALUES ('img1');
+INSERT INTO goods (name, "desc", upload_id) 
+VALUES  ('Order Food Online', 'https://foodhub-nuxt.vercel.app/_nuxt/img/15.15c95d2.jpg', (SELECT _id FROM uploadfile WHERE name = 'img1'));
+
+INSERT INTO uploadfile (name) VALUES ('img2');
+INSERT INTO goods (name, "desc", upload_id) 
+VALUES  ('Go Out For Meal', 'https://foodhub-nuxt.vercel.app/_nuxt/img/16.bbc24cb.jpg', (SELECT _id FROM uploadfile WHERE name = 'img2'));
+
+INSERT INTO uploadfile (name) VALUES ('img3');
+INSERT INTO goods (name, "desc", upload_id) 
+VALUES  ('Nightlife & Clubs', 'https://foodhub-nuxt.vercel.app/_nuxt/img/17.3634737.jpg', (SELECT _id FROM uploadfile WHERE name = 'img3'));
+
+INSERT INTO uploadfile (name) VALUES ('img4');
+INSERT INTO goods (name, "desc", upload_id) 
+VALUES  ('Pro Membership', 'https://foodhub-nuxt.vercel.app/_nuxt/img/18.2a12c1e.jpg', (SELECT _id FROM uploadfile WHERE name = 'img4'));
