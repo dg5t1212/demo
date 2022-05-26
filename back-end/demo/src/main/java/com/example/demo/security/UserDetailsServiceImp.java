@@ -26,9 +26,10 @@ public class UserDetailsServiceImp implements UserDetailsService{
 		
 		SystemUser userEntity = this.systemUserService.findByAccount(username);
 		if( null == userEntity ) {
-			log.info("使用者資料不存在");
-			throw new UsernameNotFoundException("使用者資料不存在");
+			log.info("帳號密碼錯誤");
+			throw new UsernameNotFoundException("帳號密碼錯誤");
 		}
+		
 		
 		UserDetails userDetails =  User.withUsername(username)
 				.password(userEntity.getPassword())

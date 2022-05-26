@@ -1,4 +1,4 @@
-INSERT INTO systemuser (account, password) VALUES ('user', 'password');
+INSERT INTO systemuser (account, password) VALUES ('user', '5f4dcc3b5aa765d61d8327deb882cf99');
 
 INSERT INTO uploadfile (name) VALUES ('img1');
 INSERT INTO goods (name, "desc", upload_id) 

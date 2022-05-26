@@ -9,6 +9,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import com.example.demo.utils.MD5Utils;
+
 @Component
 public class UsernamePasswordAuthenticationProvider implements AuthenticationProvider{
 
@@ -21,7 +23,10 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
 		String account = authentication.getName();
 		String password = String.valueOf(authentication.getCredentials());
 		UserDetails userDetails = userDetailsServiceImp.loadUserByUsername(account);
-		if( account.equals(userDetails.getUsername()) && password.equals(userDetails.getPassword()) ) {
+		
+		String md5Password = MD5Utils.encrypt(password);
+		
+		if( account.equals(userDetails.getUsername()) && md5Password.equals(userDetails.getPassword()) ) {
 			Authentication auth = new UsernamePasswordAuthenticationToken(account, password, userDetails.getAuthorities());
 			return auth;
 		}else {
