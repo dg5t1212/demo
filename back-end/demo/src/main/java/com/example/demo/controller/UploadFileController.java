@@ -29,6 +29,8 @@ public class UploadFileController {
 	private UploadFileService uploadFileService;
 	
 	
+	
+	
 	@ApiOperation(value = "上傳圖片")
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "成功", response = UploadFile.class),
@@ -39,12 +41,13 @@ public class UploadFileController {
 			@RequestPart(value="uploadFile") MultipartFile uploadFile) {
 		try {
 			String fileName = uploadFile.getOriginalFilename();
-			String path = "/Users/wangdaniel/Downloads/" + fileName;
+			String path = "./src/main/resources/uploadFile/" + fileName;
 			File file = new File(path);
 			FileCopyUtils.copy(uploadFile.getBytes(), file);
 			UploadFile newUploadFile = this.uploadFileService.createUploadFile(fileName);
-			return new ResponseEntity<>(null, HttpStatus.OK);
+			return new ResponseEntity<>(newUploadFile, HttpStatus.OK);
 		} catch (Exception e) {
+			e.printStackTrace();
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
