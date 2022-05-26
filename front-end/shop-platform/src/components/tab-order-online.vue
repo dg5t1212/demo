@@ -55,8 +55,8 @@ export default {
                 avgStars : 5, 
                 countEvaluator : 57, 
                 orgPrice : 25,
-                curPrice : 22.5, 
-                discountRate : '10% off',
+                curPrice : 20, 
+                discountRate : '20% off',
                 foodContent: '(4 Pcs mutton in chicken keema gravy)'
             }
         }

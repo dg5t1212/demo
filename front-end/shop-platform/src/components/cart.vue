@@ -14,7 +14,8 @@
               <hr class="v-divider theme--light">
               <div class="navbar-scroll">
                   <CartItem v-for="(cartItem, index) in cartList"
-                            :key="index" />
+                            :key="index"
+                            v-bind="cartItem" />
               </div>
           </div>
       </div>
@@ -31,7 +32,7 @@
 import ButtonUI from '@/components/buttonUI.vue'
 import CancelButtonUI from '@/components/cancelButtonUI.vue'
 import CartItem from '@/components/cart-item.vue'
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 export default {
     naem: "Cart",
     data() {
@@ -47,8 +48,10 @@ export default {
         ButtonUI, CancelButtonUI, CartItem,
     },
     methods: {
+        ...mapActions(['checkOutCartAction']),
         checkOut(){
             console.log('check out click')
+            this.checkOutCartAction();
         },
         cancelCartView(){
             this.isShowCart = false;

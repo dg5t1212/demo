@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
     name: 'FoodsMenuCard',
     data() {
@@ -48,32 +49,11 @@ export default {
     },
     props:['foodName', 'imgUrl', 'tagName', 'avgStars', 'countEvaluator', 'orgPrice', 'curPrice', 'discountRate', 'foodContent'],
     methods: {
+        ...mapActions(["addToCartAction"]),
         addToCart(){
-            console.log('addToCart onClick')
-            let cart = localStorage.getItem("cart")
-            if (cart != null) {
-    			//定義一個變數
-    			let isnew = true
-    			//轉回一個json
-    			cart = JSON.parse(cart)
-
-                for(let i = 0; i < cart.length ; i++){
-                    if( this.foods.name == cart[i].name ){
-                        isnew = false
-                        cart[i].qty += this.foods.qty;
-                        break
-                    }
-                }
-
-                if(isnew){
-                    cart.push(this.foods)
-                }
-            } else {
-                cart = [this.foods]
-            }
-            
-           
-            localStorage.setItem("cart", JSON.stringify(cart))
+            console.log('addToCart',this.foods)
+            this.addToCartAction(this.foods);
+            console.log('addToCart2')
         }
     },
 }
