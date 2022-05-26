@@ -28,9 +28,6 @@ public class UploadFileController {
 	@Autowired
 	private UploadFileService uploadFileService;
 	
-	
-	
-	
 	@ApiOperation(value = "上傳圖片")
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "成功", response = UploadFile.class),
