@@ -1,20 +1,22 @@
 DROP TABLE IF EXISTS systemUser;
 DROP TABLE IF EXISTS goods;
 DROP TABLE IF EXISTS uploadFile;
+DROP TABLE IF EXISTS order_item;
+DROP TABLE IF EXISTS order_head;
 
 CREATE TABLE systemUser (
-	_id uuid not null,
+	_id uuid not null DEFAULT gen_random_uuid(),
 	account varchar(128) UNIQUE,
 	password varchar(128),
 	PRIMARY KEY (_id)
 );
 CREATE TABLE uploadFile (
-	_id uuid NOT NULL,
+	_id uuid NOT NULL DEFAULT gen_random_uuid(),
 	name varchar(128) NOT NULL,
 	PRIMARY KEY (_id)
 );
 CREATE TABLE goods (
-	_id uuid NOT NULL,
+	_id uuid NOT NULL DEFAULT gen_random_uuid(),
 	name varchar(128) NOT NULL,
 	"desc" varchar(512) NOT NULL,
 	upload_id uuid NOT NULL,
@@ -23,4 +25,21 @@ CREATE TABLE goods (
       FOREIGN KEY(upload_id) 
 	  REFERENCES uploadFile(_id)
 );
-COMMIT;
+CREATE TABLE order_head (
+	_id uuid NOT NULL DEFAULT gen_random_uuid(),
+	total_amount int8,
+	customer_name varchar(128),
+	PRIMARY KEY (_id)
+);
+CREATE TABLE order_item (
+	_id uuid NOT NULL DEFAULT gen_random_uuid(),
+	head_id uuid NOT NULL,
+	index_no int8,
+	goods_name varchar(128),
+	amount int8,
+	qty int8,
+	PRIMARY KEY (_id),
+	CONSTRAINT fk_order_head
+      FOREIGN KEY(head_id) 
+	  REFERENCES order_head(_id)
+);
