@@ -33,7 +33,7 @@ CREATE TABLE order_head (
 );
 CREATE TABLE order_item (
 	_id uuid NOT NULL DEFAULT gen_random_uuid(),
-	head_id uuid NOT NULL,
+	head_id uuid,
 	index_no int8,
 	goods_name varchar(128),
 	amount int8,
